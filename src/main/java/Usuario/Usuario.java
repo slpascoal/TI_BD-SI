@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Usuario {
 	private String login;
 	private String senha;
