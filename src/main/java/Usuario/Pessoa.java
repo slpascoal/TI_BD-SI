@@ -1,19 +1,21 @@
+import java.util.Random;
 
 public class Pessoa {
     private int id;
 	private String nome;
     private String email;
 	private String login;
+	Random geradorId = new Random();
 	
 	public Pessoa() {
-        this.id = ;//FUNÇÃO PARA FAZER O ID
+        this.id = geradorId.nextInt(1000);//FUNÇÃO PARA FAZER O ID
         this.nome = "";
 		this.email = "";
 		this.login = "";
 	}
 	
 	public Pessoa(String nome, String email, String login) {
-        this.id = ;//FUNÇÃO PARA FAZER O ID
+        this.id = geradorId.nextInt(1000);//FUNÇÃO PARA FAZER O ID
 		this.nome = codigo;
         this.email = email;
 		this.login = login;
@@ -25,8 +27,7 @@ public class Pessoa {
 
 	public void setId() {
 	
-    
-        //AKI FUNCAO PARA FAZER ID
+		id = geradorId.nextInt(1000);
 	
     }
 

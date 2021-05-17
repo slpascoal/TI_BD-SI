@@ -1,6 +1,7 @@
 public class Usuario {
 	private String login;
 	private String senha;
+	Random geradorId = new Random();
 	
 	public Usuario() {
 		this.login = "";

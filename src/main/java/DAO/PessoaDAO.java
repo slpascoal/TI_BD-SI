@@ -1,9 +1,9 @@
 import java.sql.*;
 
-public class UsuarioDAO {
+public class PessoaDAO {
 	private Connection conexao;
 	
-	public DAO() {
+	public PessoaDAO() {
 		conexao = null;
 	}
 	
@@ -43,12 +43,12 @@ public class UsuarioDAO {
 		return status;
 	}
 	
-	public boolean inserirUsuario(Usuario usuario) {
+	public boolean inserirPessoa(Pessoa pessoa) {
 		boolean status = false;
 		try {  
 			Statement st = conexao.createStatement();
-			st.executeUpdate("INSERT INTO Usuario (login, senha) "
-					       + "VALUES ("+Usuario.getLogin()+ ", " + Usuario.getSenha() + ");");
+			st.executeUpdate("INSERT INTO Pessoa (id, nome, email, login) "
+					       + "VALUES ("+Pessoa.getId()+ ", " + Pessoa.getNome() + ", " + Pessoa.getEmail() + + ", " + Pessoa.getLogin() ");");
 			st.close();
 			status = true;
 		} catch (SQLException u) {  
@@ -57,13 +57,14 @@ public class UsuarioDAO {
 		return status;
 	}
 	
-	public boolean atualizarUsuario(Usuario usuario) {
+	public boolean atualizarPessoa(Pessoa pessoa) {
 		boolean status = false;
 		try {  
 			Statement st = conexao.createStatement();
-			String sql = "UPDATE Usuario SET Login = '" + Usuario.getLogin() + "', Senha = '"  
-				       + Usuario.getSenha();
-			st.executeUpdate(sql);
+			String sql = "UPDATE Pessoa SET Id = '" + Pessoa.getId() + "', Nome = '"  
+				       + Pessoa.getNome() "', Email = '"  + Pessoa.getEmail() + "', Login = '"  
+				       + Pessoa.getLogin();
+			st.executeUpdate(sql); 
 			st.close();
 			status = true;
 		} catch (SQLException u) {  
@@ -72,11 +73,11 @@ public class UsuarioDAO {
 		return status;
 	}
 	
-	public boolean excluirUsuario(int codigo) {
+	public boolean excluirPessoa(int codigo) {
 		boolean status = false;
 		try {  
 			Statement st = conexao.createStatement();
-			st.executeUpdate("DELETE FROM Usuario WHERE Login = " + Login);
+			st.executeUpdate("DELETE FROM Pessoa WHERE Nome = " + getNome());
 			st.close();
 			status = true;
 		} catch (SQLException u) {  
@@ -86,26 +87,26 @@ public class UsuarioDAO {
 	}
 	
 	
-	public Usuario[] getUsuarios() {
-		Usuario[] usuarios = null;
+	public Pessoa[] getPessoa() {
+		Pessoa[] pessoas = null;
 		
 		try {
 			Statement st = conexao.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
-			ResultSet rs = st.executeQuery("SELECT * FROM Usuario");		
+			ResultSet rs = st.executeQuery("SELECT * FROM Pessoa");		
 	         if(rs.next()){
 	             rs.last();
-	             Usuarios = new Usuario[rs.getRow()];
+	             Pessoas = new Pessoa[rs.getRow()];
 	             rs.beforeFirst();
 
 	             for(int i = 0; rs.next(); i++) {
-	                usuarios[i] = new Usuario(rs.getString("Login"), rs.getString("Senha"));
+	                pessoas[i] = new Pessoa(rs.getInt("Id"), rs.getString("Nome"), rs.getString("Email"), rs.getString("Login"));
 	             }
 	          }
 	          st.close();
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
-		return usuarios;
+		return pessoas;
 	}
 
 }

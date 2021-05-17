@@ -55,9 +55,9 @@ class Receita extends Operacoes {
 	}
 
 	public Receita(int id, String resumo, int valor) {
-		this.id = id;
+		setId();
 		this.resumo = resumo;
-		this.valor = valor
+		this.valor = valor;
 	}
 
 	public int getId() {
