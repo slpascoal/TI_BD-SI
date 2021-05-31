@@ -1,0 +1,114 @@
+body{
+    background-color: #222222 !important;
+}
+
+.row{
+    padding: 10px;
+}
+
+.container{
+    padding-top: 93.03px;
+    background-color: #5a5a5a;
+}
+.navbar {
+    background-color: #222222 !important;
+    border-bottom: 2px solid #C68D31;
+
+    position: fixed !important;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-brand img{
+    width: 35%;
+}
+
+.navbar-brand {
+    margin-right: -20% !important;
+}
+
+.nav-link {
+    color: #C68D31 !important;
+}
+
+.nav-link:hover {
+    color: #f8c573 !important;
+    transition: 0.5s;
+}
+
+.active{
+    color: #966e2d !important;
+}
+
+.active:hover{
+    color: #b48539 !important;
+    transition: 0.5s;
+}
+
+.dropdown-menu{
+    background-color: #222222 !important;
+}
+
+
+.dropdown-menu a{
+    color: #C68D31 !important;
+}
+
+.dropdown-menu a:hover{
+    color: #111111 !important;
+}
+
+.navbar-toggler{
+    color: #966e2d !important;
+}
+
+.agressivo-texto{
+    text-align: justify;
+}
+
+.agressivo-texto h3{
+    color: #C68D31;
+    text-shadow: 2px 2px 2px #222222;
+    text-align: center !important;
+    padding-bottom: 10px;
+}
+
+.agressivo-texto p{
+    color: #111111;
+    font-size: 17px;
+}
+
+
+.perfil-recomendacoes h4{
+    color: #C68D31;
+    text-shadow: 2px 2px 2px #222222;
+}
+
+.perfil-recomendacoes li{
+    color: #caa66b;
+    
+}
+
+.perfil-recomendacoes a{
+    text-decoration: none;
+    color: #131618;
+}
+
+.perfil-recomendacoes a:hover{
+    transition: 0.3s;
+    color: #000000;
+}
+
+.rodape{
+    background-color: #222222 !important;
+    padding: 10px;
+    border-top: 2px solid #C68D31;
+}
+
+.rodape-texto{
+    color: #b48539;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
